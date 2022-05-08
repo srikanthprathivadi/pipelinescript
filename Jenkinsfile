@@ -6,6 +6,9 @@ node {
     def newApp
     def registry = 'gustavoapolinario/microservices-node-todo-frontend'
     def registryCredential = 'dockerhub'
+	APP = sh(script: 'git tag --contain', returnStdout: true )
+app.push("${APP}")
+app.push("1.4.2")
 	
 	stage('Git') {
 		git 'https://github.com/gustavoapolinario/microservices-node-example-todo-frontend.git'
