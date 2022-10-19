@@ -30,6 +30,6 @@ COPY src /app/src
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD [ "npm".trim(), "start".trim() ]
 
 RUN ls -lah /app/src/public/static/bower_components/
